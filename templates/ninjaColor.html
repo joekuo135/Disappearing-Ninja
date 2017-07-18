@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link rel="stylesheet" text="text/css" href="{{ url_for('static', filename='css/styleninja.css') }}">
+    <title>Color Ninja</title>
+</head>
+<body>
+    <div id='container'>
+      {% if color == 'blue': %}
+          {% set result = 'Leonardo' %}
+          <img src="{{ url_for('static', filename='images/leonardo.jpg') }}">
+      {% elif color == 'orange': %}
+          {% set result = 'Michelangelo' %}
+          <img src="{{ url_for('static', filename='images/michelangelo.jpg') }}">
+      {% elif color == 'red': %}
+          {% set result = 'Raphael' %}
+          <img src="{{ url_for('static', filename='images/raphael.jpg') }}">
+      {% elif color == 'purple': %}
+          {% set result = 'Donatello' %}
+          <img src="{{ url_for('static', filename='images/donatello.jpg') }}">
+      {% else %}
+          {% set result = 'Not a Ninja' %}
+          <img src="{{ url_for('static', filename='images/notapril.jpg') }}">
+      {% endif %}
+      <h1>{{ result }}</h1>
+    </div>
+</body>
+</html>
